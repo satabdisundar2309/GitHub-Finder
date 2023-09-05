@@ -1,0 +1,342 @@
+:root {
+  --lm-bg: #f6f8ff;
+  --lm-bg-content: #fefefe;
+  --lm-text: #4b6a9b;
+  --lm-text-alt: #2b3442;
+  --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+  --lm-icon-bg: brightness(100%);
+  /* Btn */
+  --btn: #0079ff;
+  --btn-hover: #60abff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--lm-bg);
+  color: var(--lm-text);
+  position: relative;
+  font-size: 13px;
+}
+
+.container {
+  width: 90%;
+  max-width: 527px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  display: flex;
+  letter-spacing: 2.5px;
+  width: 70px;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
+  color: var(--lm-text);
+  cursor: pointer;
+  /* position: absolute; */
+}
+
+.btn p {
+  text-transform: uppercase;
+}
+.searchContainer {
+  position: relative;
+  background: var(--lm-bg-content);
+  display: flex;
+  height: 100%;
+  /* width: 100%; */
+  padding: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("./Images/search-icon.svg");
+  background-repeat: no-repeat;
+  background-position-x: 24px;
+  background-position-y: center;
+  background-size: 20px;
+  border-radius: 15px;
+  box-shadow: var(--lm-shadow);
+}
+
+#input {
+  border: none;
+  outline: none;
+  width: 80%;
+  color: var(--lm-text);
+  padding-left: 50px;
+  background: none;
+}
+#input::placeholder {
+  color: var(--lm-text);
+  letter-spacing: -0.5px;
+  font-size: 13px;
+}
+.searchContainer img {
+  height: 20px;
+  width: 20px;
+  padding: 0 10px 0px 16px;
+}
+#noResults {
+  position: absolute;
+  text-transform: capitalize;
+  top: -30px;
+  right: 70px;
+  background-color: rgb(108, 7, 7);
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 4px 6px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  scale: 0;
+  transition: 0.5s;
+}
+
+.searchContainer #btn {
+  background: var(--btn);
+  color: #fff;
+  /* outline: none; */
+  border: none;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 70px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+}
+
+.searchContainer #btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.searchContainer #btn:active {
+  scale: 0.975;
+}
+.profileContainer {
+  background-color: var(--lm-bg-content);
+  border-radius: 15px;
+  box-shadow: var(--lm-shadow);
+  padding: 20px;
+  position: relative;
+  scale: 0;
+}
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 18px;
+}
+
+.profileHeader {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+#userImage {
+  width: 90px;
+  border-radius: 50%;
+}
+.profileInfoWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.profileName {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  gap: 7px;
+}
+#name {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--lm-text-alt);
+}
+#username {
+  color: var(--btn);
+}
+
+#date {
+  font-size: 12px;
+  padding: 10px 0px 0px;
+}
+
+#profileBio {
+  line-height: 25px;
+  opacity: 0.75;
+}
+.statsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--lm-bg);
+  padding: 18px 28px;
+  border-radius: 10px;
+}
+.profileStats {
+  display: flex;
+  flex-direction: column;
+  /* width: 100%; */
+  gap: 8px;
+}
+
+.statsTitle {
+  font-size: 11px;
+}
+
+.profileStats a {
+  text-decoration: none;
+  color: var(--lm-text-alt);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.profileStats a:hover {
+  text-decoration: underline;
+}
+.profileFooter {
+  display: flex;
+  flex-flow: row wrap;
+  color: var(--lm-text);
+}
+
+.profileInfo {
+  width: 50%;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomIcon {
+  width: 20px;
+  filter: var(--lm-icon-bg);
+}
+
+.profileInfo p {
+  overflow-wrap: break-word; /*wraps a sentence into new line by breaking the words*/
+}
+
+.profileInfo a {
+  color: var(--lm-text);
+  word-break: break-all; /*wraps a word into new line by breaking the letters*/
+  text-decoration: none;
+}
+
+.profileInfo a:hover {
+  text-decoration: underline;
+}
+
+/* media queries */
+@media only screen and (max-width: 400px) {
+  .wrapper {
+    height: 680px;
+  }
+  .container {
+    gap: 20px;
+    height: 100%;
+  }
+  .header {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchContainer #btn {
+    position: absolute;
+    top: 130%;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 5px 8px;
+  }
+  .profileContainer {
+    margin-top: 2.25rem;
+    /* gap: 20px; */
+  }
+  .profileContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
+  .profileHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+  #userImage {
+    width: 70px;
+    border-radius: 50%;
+  }
+  #name {
+    font-size: 12px;
+  }
+  .profileInfoWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  #profileBio {
+    line-height: 18px;
+
+    opacity: 0.75;
+  }
+  .profileFooter {
+    display: flex;
+    flex-direction: column;
+  }
+  .profileInfo {
+    width: 100%;
+    gap: 10px;
+    justify-content: left;
+  }
+  .bottomIcon {
+    width: 10px;
+    margin-right: 5px;
+  }
+  #noResults {
+    top: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    text-transform: uppercase;
+  }
+}
